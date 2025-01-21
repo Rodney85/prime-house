@@ -90,7 +90,7 @@ export function NavBar({ items, className }: NavBarProps) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.2 }}
-                className="absolute top-full left-0 right-0 mt-2 bg-white/20 backdrop-blur-md rounded-lg shadow-lg md:hidden"
+                className="absolute top-full left-0 right-0 mt-2 bg-white shadow-lg rounded-lg md:hidden z-50 overflow-hidden"
               >
                 <div className="py-2">
                   {items.map((item) => {
