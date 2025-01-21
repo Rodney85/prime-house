@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { LucideIcon, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { useState } from "react"
 import { cn } from "../../lib/utils"
 import { Logo } from "./logo"
 
 interface NavItem {
   name: string
   url: string
-  icon: LucideIcon
 }
 
 interface NavBarProps {
@@ -38,7 +37,6 @@ export function NavBar({ items, className }: NavBarProps) {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {items.map((item) => {
-              const Icon = item.icon
               const isActive = activeTab === item.name
 
               return (
@@ -96,7 +94,6 @@ export function NavBar({ items, className }: NavBarProps) {
               >
                 <div className="py-2">
                   {items.map((item) => {
-                    const Icon = item.icon
                     const isActive = activeTab === item.name
 
                     return (
@@ -113,7 +110,6 @@ export function NavBar({ items, className }: NavBarProps) {
                           isActive && "text-[#FF5A1F] bg-gray-50"
                         )}
                       >
-                        <Icon size={18} />
                         <span>{item.name}</span>
                       </a>
                     )
